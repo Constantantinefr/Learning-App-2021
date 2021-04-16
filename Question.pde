@@ -11,15 +11,33 @@ public class Question {
     fill(255);
     rect(100,150,1000,300);
     fill(0);
-    textSize(64);
-    text(this.question, 500, 225, 1100, 450);
+    textSize(128);
+    textAlign(CENTER, CENTER);
+    text(this.question, 100, 150, 1000, 300);
     fill(255);
     rect(100,550,175,175);
+    fill(0);
+    textSize(50);
+    if(cAnswer.length()>5) textSize(40);
+    text(this.cAnswer,100,550,175,175);
     fill(255);
     rect(375,550,175,175);
+    fill(0);
+    textSize(50);
+    if(wAnswer1.length()>5) textSize(40);
+    text(this.wAnswer1,375,550,175,175);
     fill(255);
     rect(650,550,175,175);
+    fill(0);
+    textSize(50);
+    if(wAnswer2.length()>5) textSize(40);
+    text(this.wAnswer2,650,550,175,175);
     fill(255);
     rect(925,550,175,175);
+    fill(0);
+    textSize(50);
+    if(wAnswer3.length()>5) textSize(40);
+    text(this.wAnswer3,925,550,175,175);
+    textAlign(LEFT, TOP);
   }
 }

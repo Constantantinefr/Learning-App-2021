@@ -2,7 +2,8 @@ PImage img;
 boolean mode = true;
 String l = "LEARN MODE";
 String q = "QUIZ MODE";
-Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)"); //√ °
+Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)"); //√ °  π
+Learn_Button lb = new Learn_Button("0°", "0 or 2π", "(1,0)",890,375);
 public void setup() {
   size (1200, 800);
   img = loadImage("UnitBlank.png");
@@ -24,6 +25,8 @@ public void draw() {
     rect (600,0,600,50);
     fill(255);
     text(q,800,10,600,50);
+    lb.draw();
+    lb.mouseReleased();
   }
   if (!mode) {
     background(#0000FF);
@@ -43,4 +46,5 @@ public void draw() {
 void mouseReleased() {
  if (mouseX>=0 && mouseX<= 600 && mouseY >=0 && mouseY <=50) mode = true;
  if (mouseX>=600 && mouseX<= 1200 && mouseY >=0 && mouseY <=50) mode = false;
+ System.out.println(mouseX+", "+mouseY);
 }
