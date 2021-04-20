@@ -2,11 +2,13 @@ PImage img;
 boolean mode = true;
 String l = "LEARN MODE";
 String q = "QUIZ MODE";
+ArrayList<Learn_Button> lbs;
 Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)"); //√ °  π
-Learn_Button lb = new Learn_Button("0°", "0 or 2π", "(1,0)",890,375);
 public void setup() {
   size (1200, 800);
   img = loadImage("UnitBlank.png");
+  lbs = new ArrayList<Learn_Button>();
+  lbs.add(new Learn_Button("0°", "0 or 2π", "(1,0)",890,375));
 }
 
 public void draw() {
@@ -25,8 +27,10 @@ public void draw() {
     rect (600,0,600,50);
     fill(255);
     text(q,800,10,600,50);
-    lb.draw();
-    lb.mouseReleased();
+    for (Learn_Button lb : lbs) {
+     lb.draw(); 
+     lb.mouseReleased();
+    }
   }
   if (!mode) {
     background(#0000FF);
