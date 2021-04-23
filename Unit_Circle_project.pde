@@ -9,6 +9,21 @@ public void setup() {
   img = loadImage("UnitBlank.png");
   lbs = new ArrayList<Learn_Button>();
   lbs.add(new Learn_Button("0°", "0 or 2π", "(1,0)",890,375));
+  lbs.add(new Learn_Button("30°", "1/6π", "(√3/2, 1/2)", 801, 280));
+  lbs.add(new Learn_Button("45°", "1/4π", "(√2/2, √2/2)", 771, 232));
+  lbs.add(new Learn_Button("60°", "1/3π", "(1/2, √3/2)", 721, 179));
+  lbs.add(new Learn_Button("90°", "1/2π", "(0, 1)", 598, 146));
+  lbs.add(new Learn_Button("120°", "2/3π", "(-1/2, √3/2)", 477, 193));
+  lbs.add(new Learn_Button("135°", "3/4π", "(-√2/2, √2/2)", 411 , 218));
+  lbs.add(new Learn_Button("150°", "5/6π", "(-√3/2, 1/2)", 369, 270));
+  lbs.add(new Learn_Button("180°", "π", "(-1, 0)", 278, 397));
+  lbs.add(new Learn_Button("210°", "7/6π", "(-√3/2, -1/2)", 358, 517));
+  lbs.add(new Learn_Button("225°", "5/4π", "(-√2/2, -√2/2)", 384, 577));
+  lbs.add(new Learn_Button("240°", "4/3π", "(-1/2, -√3/2)", 474, 616));
+  lbs.add(new Learn_Button("270°", "3/2π", "(0, -1)", 598, 662));
+  lbs.add(new Learn_Button("300°", "5/3π", "(1/2, -√3/2)", 721, 608));
+  lbs.add(new Learn_Button("315°", "7/4π", "(√2/2, -√2/2)", 772, 573));
+  lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 819, 520));
 }
 
 public void draw() {
