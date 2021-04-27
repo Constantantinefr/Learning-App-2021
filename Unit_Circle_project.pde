@@ -3,15 +3,15 @@ boolean mode = true;
 String l = "LEARN MODE";
 String q = "QUIZ MODE";
 ArrayList<Learn_Button> lbs;
-Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)"); //√ °  π
+Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1); //√ °  π
 public void setup() {
   size (1200, 800);
   img = loadImage("UnitBlank.png");
   lbs = new ArrayList<Learn_Button>();
-  lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 836, 488));
+   lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 836, 488));
   lbs.add(new Learn_Button("315°", "7/4π", "(√2/2, -√2/2)", 762, 564)); 
-  lbs.add(new Learn_Button("300°", "5/3π", "(1/2, -√3/2)", 648, 610));
-  lbs.add(new Learn_Button("270°", "3/2π", "(0, -1)", 569, 624));
+  lbs.add(new Learn_Button("300°", "5/3π", "(1/2, -√3/2)", 694, 610));
+  lbs.add(new Learn_Button("270°", "3/2π", "(0, -1)", 558, 624));
   lbs.add(new Learn_Button("240°", "4/3π", "(-1/2, -√3/2)", 451, 615)); 
   lbs.add(new Learn_Button("225°", "5/4π", "(-√2/2, -√2/2)", 378, 568));
   lbs.add(new Learn_Button("210°", "7/6π", "(-√3/2, -1/2)", 331, 496));
@@ -24,7 +24,6 @@ public void setup() {
   lbs.add(new Learn_Button("135°", "3/4π", "(-√2/2, √2/2)", 359 , 183));
   lbs.add(new Learn_Button("150°", "5/6π", "(-√3/2, 1/2)", 313, 253));
   lbs.add(new Learn_Button("180°", "π", "(-1, 0)", 245, 375));
-  
 }
 
 public void draw() {
@@ -45,7 +44,6 @@ public void draw() {
     text(q,800,10,600,50);
     for (Learn_Button lb : lbs) {
      lb.draw(); 
-     lb.mouseReleased();
     }
   }
   if (!mode) {
@@ -60,6 +58,7 @@ public void draw() {
     fill(255);
     text(q,800,10,600,50);
     qu.draw();
+   
   }
 }
 
@@ -67,4 +66,13 @@ void mouseReleased() {
  if (mouseX>=0 && mouseX<= 600 && mouseY >=0 && mouseY <=50) mode = true;
  if (mouseX>=600 && mouseX<= 1200 && mouseY >=0 && mouseY <=50) mode = false;
  System.out.println(mouseX+", "+mouseY);
+ if(mode) {
+   for (Learn_Button lb : lbs) {
+     lb.mouseReleased();
+     
+    } 
+ }
+ if (!mode) {
+   qu.checkAnswer(); 
+ }
 }

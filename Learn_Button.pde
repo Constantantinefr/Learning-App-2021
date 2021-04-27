@@ -10,7 +10,7 @@ public class Learn_Button {
    this.x = x;
    this.y = y;
    this.size = 70;
-   this.openSize = 165;
+   this.openSize = 150;
    this.isOpen = false;
  }
  
@@ -40,6 +40,7 @@ public class Learn_Button {
      textAlign(CENTER,CENTER);
      text(radian, x,y, openSize, openSize);
      textAlign(CENTER, BOTTOM);
+     textSize(19);
      text(coordinate, x,y, openSize, openSize);
      textAlign(LEFT, TOP);
  }
