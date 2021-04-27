@@ -9,8 +9,8 @@ public class Learn_Button {
    this.coordinate = c;
    this.x = x;
    this.y = y;
-   this.size = 50;
-   this.openSize = 105;
+   this.size = 70;
+   this.openSize = 165;
    this.isOpen = false;
  }
  
