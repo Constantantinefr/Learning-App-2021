@@ -4,13 +4,20 @@ String l = "LEARN MODE";
 String q = "QUIZ MODE";
 ArrayList<Learn_Button> lbs;
 ArrayList<Question> qus;
+int i = 0;
 Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1); //√ °  π
 public void setup() {
   size (1200, 800);
+  
   img = loadImage("UnitBlank.png");
   qus = new ArrayList<Question>();
   qus.add(new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1));
-  qus.add(new Question("90", "3/2 π", "2π", "1/2 π", "1/3 π", 3));
+  qus.add(new Question("90°", "3/2 π", "2π", "1/2 π", "1/3 π", 3));
+  qus.add(new Question("5/6 π", "135°", "270°", "300°", "150°", 4));
+  qus.add(new Question("2 π", "(0,0)", "(1,2)", "(1,0)", "(-1,0)", 1));
+  qus.add(new Question("√3/2, 1/2)", "2π", "1/6 π", "1/3 π", "1.4 π", 2));
+  qus.add(new Question("90°", "(0,0)", "(1,0)", "(0,1)", "(1,1)", 3));
+  
   lbs = new ArrayList<Learn_Button>();
    lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 836, 488));
   lbs.add(new Learn_Button("315°", "7/4π", "(√2/2, -√2/2)", 762, 564)); 
@@ -28,6 +35,7 @@ public void setup() {
   lbs.add(new Learn_Button("135°", "3/4π", "(-√2/2, √2/2)", 359 , 183));
   lbs.add(new Learn_Button("150°", "5/6π", "(-√3/2, 1/2)", 313, 253));
   lbs.add(new Learn_Button("180°", "π", "(-1, 0)", 245, 375));
+  i = (int)(Math.random() * qus.size());
 }
 
 public void draw() {
@@ -62,7 +70,15 @@ public void draw() {
     rect (600,0,600,50);
     fill(255);
     text(q,800,10,600,50);
-    qu.draw();
+    fill(#FFFF00);
+    rect(710, 65, 350, 75);
+    fill(0);
+    textSize(50);  
+    textAlign(CENTER, CENTER);
+    text("CONTINUE", 710, 65, 350, 60);
+    textAlign(LEFT, TOP);
+    
+    qus.get(i).draw();
    
   }
 }
@@ -72,8 +88,15 @@ void mouseReleased() {
  if (mouseX>=600 && mouseX<= 1200 && mouseY >=0 && mouseY <=50) mode = false;
  System.out.println(mouseX+", "+mouseY);
  if(mode) {
+   for(Learn_Button lb: lbs) {
+    lb.draw(); 
+   }
  }
  if (!mode) {
-   qu.checkAnswer(); 
+   qus.get(i).checkAnswer(); 
+   if (mouseX>=710 && mouseX <= 1060 && mouseY >=65 && mouseY <= 125) {
+     if ( i== qus.size()-1) i = 0;
+     else i++;
+   }
  }
 }

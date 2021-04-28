@@ -71,11 +71,6 @@ public class Question {
       textSize(128);
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
-      fill(#FFFF00);
-      rect(710, 65, 350, 75);
-      fill(0);
-      textSize(50);  
-      text("CONTINUE", 710, 65, 350, 60);
       textAlign(LEFT, TOP);
     }
     if (button2.answered == true && button2.a == true) {
