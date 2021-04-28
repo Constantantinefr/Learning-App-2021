@@ -3,10 +3,22 @@ boolean mode = true;
 String l = "LEARN MODE";
 String q = "QUIZ MODE";
 ArrayList<Learn_Button> lbs;
+ArrayList<Question> qus;
 Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1); //√ °  π
 public void setup() {
   size (1200, 800);
   img = loadImage("UnitBlank.png");
+  qus = new ArrayList<Question>();
+  qus.add(new Question("30°", "(1,0)", "(0,1)", "(1,1)", "(√3/2, 1/2)",4)); 
+  qus.add(new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1));
+  qus.add(new Question("π°", "(1,0)", "(1,1)", "(-1,0)", "(0, -1)",2));
+  qus.add(new Question("90", "3/2 π", "2π", "1/2 π", "1/3 π", 3));
+  qus.add(new Question("(0,-1)", "3/2 π", "4/2π", "11/4 π", "42/75 π", 1));
+  qus.add(new Question("(1/2, -√3/2)", "1/2 π", "5/3π", "2/3 π", "6/5 π", 2));
+  qus.add(new Question("(-1/2, -√3/2)", "4/3 π", "5/4π", "7/6 π", "π", 1));
+  qus.add(new Question("(1/2, -√3/2)", "1/2 π", "5/3π", "2/3 π", "6/5 π", 2));
+  qus.add(new Question("(-1/2,√3/2)", "120°", "3/3π", "1/3 π", "5/3π", 1));
+  
   lbs = new ArrayList<Learn_Button>();
    lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 836, 488));
   lbs.add(new Learn_Button("315°", "7/4π", "(√2/2, -√2/2)", 762, 564)); 
@@ -45,7 +57,6 @@ public void draw() {
     for (Learn_Button lb : lbs) {
      lb.draw(); 
      lb.mouseReleased();
-     
     }
   }
   if (!mode) {
@@ -60,7 +71,7 @@ public void draw() {
     fill(255);
     text(q,800,10,600,50);
     qu.draw();
-    qu.checkAnswer();
+   
   }
 }
 
@@ -68,4 +79,9 @@ void mouseReleased() {
  if (mouseX>=0 && mouseX<= 600 && mouseY >=0 && mouseY <=50) mode = true;
  if (mouseX>=600 && mouseX<= 1200 && mouseY >=0 && mouseY <=50) mode = false;
  System.out.println(mouseX+", "+mouseY);
+ if(mode) {
+ }
+ if (!mode) {
+   qu.checkAnswer(); 
+ }
 }
