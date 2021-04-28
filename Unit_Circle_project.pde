@@ -3,10 +3,14 @@ boolean mode = true;
 String l = "LEARN MODE";
 String q = "QUIZ MODE";
 ArrayList<Learn_Button> lbs;
+ArrayList<Question> qus;
 Question qu = new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1); //√ °  π
 public void setup() {
   size (1200, 800);
   img = loadImage("UnitBlank.png");
+  qus = new ArrayList<Question>();
+  qus.add(new Question("0°", "(1,0)", "(0,1)", "(1,1)", "(√2/2, √2/2)",1));
+  qus.add(new Question("90", "3/2 π", "2π", "1/2 π", "1/3 π", 3));
   lbs = new ArrayList<Learn_Button>();
    lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 836, 488));
   lbs.add(new Learn_Button("315°", "7/4π", "(√2/2, -√2/2)", 762, 564)); 
@@ -44,6 +48,7 @@ public void draw() {
     text(q,800,10,600,50);
     for (Learn_Button lb : lbs) {
      lb.draw(); 
+     lb.mouseReleased();
     }
   }
   if (!mode) {
@@ -67,10 +72,6 @@ void mouseReleased() {
  if (mouseX>=600 && mouseX<= 1200 && mouseY >=0 && mouseY <=50) mode = false;
  System.out.println(mouseX+", "+mouseY);
  if(mode) {
-   for (Learn_Button lb : lbs) {
-     lb.mouseReleased();
-     
-    } 
  }
  if (!mode) {
    qu.checkAnswer(); 

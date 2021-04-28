@@ -18,7 +18,7 @@ public class Learn_Button {
    if (mouseX > x && mouseX < x+size && mouseY>y && mouseY< y+size){
      isOpen = true;
    }
-   else if (!(mouseX > x && mouseX < x+openSize && mouseY>y && mouseY< y+openSize)) isOpen = false;
+   if (!(mouseX > x && mouseX < x+openSize && mouseY>y && mouseY< y+openSize)) isOpen = false;
  }
  
  public void draw() {

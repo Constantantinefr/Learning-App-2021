@@ -24,6 +24,11 @@ public class Question {
     button3.mouseReleased();
     button4.mouseReleased();
   }
+  public void mouseReleased() {
+    if (isanswered) {
+      //if (
+    }
+  }
   public void draw() {
     if (button1.answered == false && button2.answered == false && button3.answered == false && button4.answered == false) {
       fill(255);
@@ -60,83 +65,88 @@ public class Question {
     }
     if (button1.answered == true && button1.a == true) {
       fill(#00FF00);
-        rect(button1.x, button1.y, button1.size, button1.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("CORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      rect(button1.x, button1.y, button1.size, button1.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("CORRECT", 100, 150, 1000, 300);
+      fill(#FFFF00);
+      rect(710, 65, 350, 75);
+      fill(0);
+      textSize(50);  
+      text("CONTINUE", 710, 65, 350, 60);
+      textAlign(LEFT, TOP);
     }
-     if (button2.answered == true && button2.a == true) {
+    if (button2.answered == true && button2.a == true) {
       fill(#00FF00);
-        rect(button2.x, button2.y, button2.size, button2.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("CORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      rect(button2.x, button2.y, button2.size, button2.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("CORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
-     if (button3.answered == true && button3.a == true) {
+    if (button3.answered == true && button3.a == true) {
       fill(#00FF00);
-        rect(button3.x, button3.y, button3.size, button3.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("CORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      rect(button3.x, button3.y, button3.size, button3.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("CORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
-     if (button4.answered == true && button4.a == true) {
+    if (button4.answered == true && button4.a == true) {
       fill(#00FF00);
-        rect(button4.x, button4.y, button4.size, button4.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("CORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      rect(button4.x, button4.y, button4.size, button4.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("CORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
-     if (button4.answered == true && button4.a == false) {
-       fill(#FF0000);
-        rect(button4.x, button4.y, button4.size, button4.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("INCORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+    if (button4.answered == true && button4.a == false) {
+      fill(#FF0000);
+      rect(button4.x, button4.y, button4.size, button4.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("INCORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
     if (button2.answered == true && button2.a == false) {
-       fill(#FF0000);
-        rect(button2.x, button2.y, button2.size, button2.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("INCORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      fill(#FF0000);
+      rect(button2.x, button2.y, button2.size, button2.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("INCORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
     if (button3.answered == true && button3.a == false) {
-       fill(#FF0000);
-        rect(button3.x, button3.y, button3.size, button3.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("INCORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      fill(#FF0000);
+      rect(button3.x, button3.y, button3.size, button3.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("INCORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
     if (button1.answered == true && button1.a == false) {
-       fill(#FF0000);
-        rect(button1.x, button1.y, button1.size, button1.size);
-        rect(100, 150, 1000, 300);
-        fill(255);
-        textSize(128);
-        textAlign(CENTER, CENTER);
-        text("INCORRECT", 100, 150, 1000, 300);
-        textAlign(LEFT, TOP);
+      fill(#FF0000);
+      rect(button1.x, button1.y, button1.size, button1.size);
+      rect(100, 150, 1000, 300);
+      fill(255);
+      textSize(128);
+      textAlign(CENTER, CENTER);
+      text("INCORRECT", 100, 150, 1000, 300);
+      textAlign(LEFT, TOP);
     }
   }
 }
