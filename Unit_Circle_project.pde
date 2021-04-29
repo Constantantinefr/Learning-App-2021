@@ -28,7 +28,7 @@ public void setup() {
   qus.add(new Question("135°", "(-√2/2, -√2/2)", "(√3/2, 1/2)", "(-√2/2, √2/2)", "(-√3/2, 1/2)", 3));
   qus.add(new Question("-√3/2, -1/2)", "7/6 π", "4/3 π", "-1/3π", "5/6 π", 1));
   qus.add(new Question("4/3 π", "240°", "210°", "300°", "330°", 1));
-  
+  */
    //√  °  π
   
   lbs = new ArrayList<Learn_Button>();
@@ -108,6 +108,10 @@ void mouseReleased() {
  if (!mode) {
    qus.get(i).checkAnswer(); 
    if (mouseX>=710 && mouseX <= 1060 && mouseY >=65 && mouseY <= 125) {
+     qus.get(i).button1.answered = false;
+     qus.get(i).button2.answered = false;
+     qus.get(i).button3.answered = false;
+     qus.get(i).button4.answered = false;
      if ( i== qus.size()-1) i = 0;
      else i++;
    }
