@@ -76,7 +76,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
-      score++;
+      
     }
     if (button2.answered == true && button2.a == true) {
       fill(#00FF00);
@@ -87,7 +87,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
-      score++;
+     // score++;
     }
     if (button3.answered == true && button3.a == true) {
       fill(#00FF00);
@@ -98,7 +98,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
-      score++;
+     // score++;
     }
     if (button4.answered == true && button4.a == true) {
       fill(#00FF00);
@@ -109,7 +109,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
-      score++;
+      //score++;
     }
     if (button4.answered == true && button4.a == false) {
       fill(#FF0000);
@@ -120,6 +120,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("INCORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score = 0;
     }
     if (button2.answered == true && button2.a == false) {
       fill(#FF0000);
@@ -130,6 +131,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("INCORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score = 0;
     }
     if (button3.answered == true && button3.a == false) {
       fill(#FF0000);
@@ -140,6 +142,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("INCORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score = 0;
     }
     if (button1.answered == true && button1.a == false) {
       fill(#FF0000);
@@ -150,6 +153,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("INCORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score = 0;
     }
   }
 }

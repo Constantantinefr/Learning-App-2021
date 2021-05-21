@@ -29,6 +29,7 @@ public class Question_Button {
         textAlign(CENTER, CENTER);
         text("CORRECT", 100, 150, 1000, 300);
         textAlign(LEFT, TOP);
+        score++;
       }
       answered = true;
     }

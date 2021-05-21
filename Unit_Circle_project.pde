@@ -6,7 +6,6 @@ ArrayList<Learn_Button> lbs;
 ArrayList<Question> qus;
 int i = 0;
   public static int score = 0;
-  public int streak = 0;
   public int highscore = 0;
 
 public void setup() {
@@ -31,25 +30,31 @@ public void setup() {
   qus.add(new Question("135°", "(-√2/2, -√2/2)", "(√3/2, 1/2)", "(-√2/2, √2/2)", "(-√3/2, 1/2)", 3));
   qus.add(new Question("(-√3/2, -1/2)", "7/6 π", "4/3 π", "-1/3π", "5/6 π", 1));
   qus.add(new Question("4/3 π", "240°", "210°", "300°", "330°", 1));
+  qus.add(new Question("60°", "1/3 π", " 4/3 π", "5/3 π", "2/3π", 1));
+  qus.add(new Question("(1,0)", "1/2 π", "0", "π", "3π/4", 2));
+  qus.add(new Question("7/6 π", "120°", "315°", "210°", "150°", 3));
+  qus.add(new Question("240°", "(1/2, √3/2)", "(1/2, √2/2)", "(-1/2, -√3/2)", "(-√3/2, -1/2)", 3));
+  qus.add(new Question("(-√2/2, √2/2)", "-45°", "120°", "225°", "135°", 4));
+  
   
    //√  °  π
   
   lbs = new ArrayList<Learn_Button>();
-  lbs.add(new Learn_Button("330°", "11/6π", "(√3/2, -1/2)", 836, 488));
-  lbs.add(new Learn_Button("315°", "7/4π", "(√2/2, -√2/2)", 762, 564)); 
-  lbs.add(new Learn_Button("300°", "5/3π", "(1/2, -√3/2)", 694, 610));
-  lbs.add(new Learn_Button("270°", "3/2π", "(0, -1)", 558, 645));
-  lbs.add(new Learn_Button("240°", "4/3π", "(-1/2, -√3/2)", 451, 615)); 
-  lbs.add(new Learn_Button("225°", "5/4π", "(-√2/2, -√2/2)", 378, 568));
-  lbs.add(new Learn_Button("210°", "7/6π", "(-√3/2, -1/2)", 331, 496));
+  lbs.add(new Learn_Button("330°", "11/6 π", "(√3/2, -1/2)", 836, 488));
+  lbs.add(new Learn_Button("315°", "7/4 π", "(√2/2, -√2/2)", 762, 564)); 
+  lbs.add(new Learn_Button("300°", "5/3 π", "(1/2, -√3/2)", 694, 610));
+  lbs.add(new Learn_Button("270°", "3/2 π", "(0, -1)", 558, 645));
+  lbs.add(new Learn_Button("240°", "4/3 π", "(-1/2, -√3/2)", 451, 615)); 
+  lbs.add(new Learn_Button("225°", "5/4 π", "(-√2/2, -√2/2)", 378, 568));
+  lbs.add(new Learn_Button("210°", "7/6 π", "(-√3/2, -1/2)", 331, 496));
   lbs.add(new Learn_Button("0°", "0 or 2π", "(1,0)",890,375));
-  lbs.add(new Learn_Button("30°", "1/6π", "(√3/2, 1/2)", 801, 264));
-  lbs.add(new Learn_Button("45°", "1/4π", "(√2/2, √2/2)", 779, 185));
-  lbs.add(new Learn_Button("60°", "1/3π", "(1/2, √3/2)", 709, 117));
-  lbs.add(new Learn_Button("90°", "1/2π", "(0, 1)", 567, 87));
-  lbs.add(new Learn_Button("120°", "2/3π", "(-1/2, √3/2)", 431, 123));
-  lbs.add(new Learn_Button("150°", "5/6π", "(-√3/2, 1/2)", 313, 253));
-  lbs.add(new Learn_Button("135°", "3/4π", "(-√2/2, √2/2)", 359 , 183));
+  lbs.add(new Learn_Button("30°", "1/6 π", "(√3/2, 1/2)", 801, 264));
+  lbs.add(new Learn_Button("45°", "1/4 π", "(√2/2, √2/2)", 779, 185));
+  lbs.add(new Learn_Button("60°", "1/3 π", "(1/2, √3/2)", 709, 117));
+  lbs.add(new Learn_Button("90°", "1/2 π", "(0, 1)", 567, 87));
+  lbs.add(new Learn_Button("120°", "2/3 π", "(-1/2, √3/2)", 431, 123));
+  lbs.add(new Learn_Button("150°", "5/6 π", "(-√3/2, 1/2)", 313, 253));
+  lbs.add(new Learn_Button("135°", "3/4 π", "(-√2/2, √2/2)", 359 , 183));
   lbs.add(new Learn_Button("180°", "π", "(-1, 0)", 245, 375));
   i = (int)(Math.random() * qus.size());
 }
@@ -96,9 +101,10 @@ public void draw() {
     fill(255);
     textSize(30);
     textAlign(CENTER, CENTER);
-    text("SCORE: " + score, 50, 65, 200, 60);
+    text("STREAK: " + score, 50, 65, 350, 60);
+    text("LONGEST STREAK: " + highscore, 350, 65, 350, 60);
     textAlign(LEFT, TOP);
-    
+    if (score > highscore) highscore = score;
     qus.get(i).draw();
    
   }
@@ -124,4 +130,5 @@ void mouseReleased() {
      else i++;
    }
  }
+
 }
