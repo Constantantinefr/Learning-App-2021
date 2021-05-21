@@ -2,9 +2,6 @@ public class Question {
   public String question, answer, answer2, answer3, answer4;
   public Question_Button button1, button2, button3, button4;
   public boolean isanswered;
-  public int score;
-  public int streak;
-  public int highscore;
   public Question(String q, String a1, String a2, String a3, String a4, int num) {
     this.question = q;
     this.answer = a1;
@@ -12,9 +9,6 @@ public class Question {
     this.answer3 = a3;
     this.answer4 = a4;
     this.isanswered = false;
-    this.score = 0;
-    this.streak = 0;
-    this.highscore = 0;
     button1 = new Question_Button(100, 550);
     button2 = new Question_Button(375, 550);
     button3 = new Question_Button(650, 550);
@@ -82,6 +76,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score++;
     }
     if (button2.answered == true && button2.a == true) {
       fill(#00FF00);
@@ -92,6 +87,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score++;
     }
     if (button3.answered == true && button3.a == true) {
       fill(#00FF00);
@@ -102,6 +98,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score++;
     }
     if (button4.answered == true && button4.a == true) {
       fill(#00FF00);
@@ -112,6 +109,7 @@ public class Question {
       textAlign(CENTER, CENTER);
       text("CORRECT", 100, 150, 1000, 300);
       textAlign(LEFT, TOP);
+      score++;
     }
     if (button4.answered == true && button4.a == false) {
       fill(#FF0000);

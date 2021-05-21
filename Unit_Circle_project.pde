@@ -5,6 +5,9 @@ String q = "QUIZ MODE";
 ArrayList<Learn_Button> lbs;
 ArrayList<Question> qus;
 int i = 0;
+  public static int score = 0;
+  public int streak = 0;
+  public int highscore = 0;
 
 public void setup() {
   size (1200, 800);
@@ -26,9 +29,9 @@ public void setup() {
   qus.add(new Question("180°", "2π", "1/2 π", "0", "π", 4));
   qus.add(new Question("(-√3/2, -1/2)", "300°", "210° ", "45° ", "330° ", 2));
   qus.add(new Question("135°", "(-√2/2, -√2/2)", "(√3/2, 1/2)", "(-√2/2, √2/2)", "(-√3/2, 1/2)", 3));
-  qus.add(new Question("-√3/2, -1/2)", "7/6 π", "4/3 π", "-1/3π", "5/6 π", 1));
+  qus.add(new Question("(-√3/2, -1/2)", "7/6 π", "4/3 π", "-1/3π", "5/6 π", 1));
   qus.add(new Question("4/3 π", "240°", "210°", "300°", "330°", 1));
-  */
+  
    //√  °  π
   
   lbs = new ArrayList<Learn_Button>();
@@ -89,6 +92,11 @@ public void draw() {
     textSize(50);  
     textAlign(CENTER, CENTER);
     text("CONTINUE", 710, 65, 350, 60);
+    textAlign(LEFT, TOP);
+    fill(255);
+    textSize(30);
+    textAlign(CENTER, CENTER);
+    text("SCORE: " + score, 50, 65, 200, 60);
     textAlign(LEFT, TOP);
     
     qus.get(i).draw();
