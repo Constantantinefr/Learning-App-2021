@@ -71,6 +71,7 @@ public void setup() {
 public void draw() {
   background(255);
   if (mode) {
+    noStroke();
     background(#FFA500);
     fill(255);
     circle(600, 400, 430);
@@ -85,11 +86,13 @@ public void draw() {
     fill(255);
     text(q, 800, 10, 600, 50);
     for (Learn_Button lb : lbs) {
+      stroke(0);
       lb.draw(); 
       //lb.mouseReleased();
     }
   }
   if (!mode) {
+    noStroke();
     background(#0000FF);
     fill(#FFA500);
     rect (0, 0, 600, 50);
@@ -124,6 +127,7 @@ void mouseReleased() {
   System.out.println(mouseX+", "+mouseY);
   if (mode) {
     for (Learn_Button lb : lbs) {
+      stroke(0);
       lb.mouseReleased();
     }
   }
